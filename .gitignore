@@ -1,0 +1,22 @@
+
+#Ignore binaries
+
+*.ilk
+*.pdb
+*.obj
+*.exe
+*.dep
+*.pch
+*.idb
+
+#Project files
+*.suo
+*.ncb
+*.user
+
+#Various files
+#*.tmp
+
+#Folders
+[Dd]ebug/
+[Rr]elease/

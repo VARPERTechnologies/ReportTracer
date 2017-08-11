@@ -1,0 +1,13 @@
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\bin\Debug\CommonTools.dll
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\bin\Debug\CommonTools.pdb
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.ColorPickerCtrl.Resources.colorbarIndicators.bmp
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.ColorPickerCtrl.Resources.eyedropper.bmp
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.ColorPickerCtrl.Resources.popupcontainerbuttons.bmp
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.ColorPickerCtrl.resources
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.ColorPickerDialog.resources
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.ColorWheelCtrl.resources
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.PropertyDialog.resources
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.csproj.GenerateResource.Cache
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.dll
+C:\Users\Edixon\Downloads\TreeWithColumn.source\CommonTools\obj\Debug\CommonTools.pdb
