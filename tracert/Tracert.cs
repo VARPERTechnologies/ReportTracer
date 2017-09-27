@@ -29,7 +29,7 @@ namespace VRK.Net
         //string _dev_name;
 
 
-        IPHostEntry _ip_entries;
+        //IPHostEntry _ip_entries;
         List<TracertNode> _nodes;
 		bool _isDone;
 		IPAddress _destination;
@@ -134,7 +134,9 @@ namespace VRK.Net
 				return _buffer;
 			}
 		}
-        
+
+        public string DeviceAlias { get; set; }
+
         public void Stop()
         {
             if(_ping != null)

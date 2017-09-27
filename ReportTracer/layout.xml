@@ -1,0 +1,89 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="#LayoutVersion" />
+  <property name="OptionsBehavior" isnull="true" iskey="true">
+    <property name="AllowAddRows">True</property>
+  </property>
+  <property name="OptionsCustomization" isnull="true" iskey="true">
+    <property name="AllowQuickHideColumns">false</property>
+    <property name="AllowColumnMoving">false</property>
+  </property>
+  <property name="OptionsNavigation" isnull="true" iskey="true">
+    <property name="AutoFocusNewRow">true</property>
+  </property>
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="NewItemRowPosition">Bottom</property>
+    <property name="ShowGroupPanel">false</property>
+  </property>
+  <property name="FixedLineWidth">2</property>
+  <property name="IndicatorWidth">-1</property>
+  <property name="ColumnPanelRowHeight">-1</property>
+  <property name="RowSeparatorHeight">0</property>
+  <property name="FooterPanelHeight">-1</property>
+  <property name="HorzScrollVisibility">Auto</property>
+  <property name="VertScrollVisibility">Auto</property>
+  <property name="RowHeight">-1</property>
+  <property name="GroupRowHeight">-1</property>
+  <property name="GroupFormat">{0}: [#image]{1} {2}</property>
+  <property name="ChildGridLevelName" />
+  <property name="VertScrollTipFieldName" />
+  <property name="PreviewFieldName" />
+  <property name="GroupPanelText" />
+  <property name="NewItemRowText" />
+  <property name="LevelIndent">-1</property>
+  <property name="PreviewIndent">-1</property>
+  <property name="PreviewLineCount">-1</property>
+  <property name="ScrollStyle">LiveVertScroll, LiveHorzScroll</property>
+  <property name="FocusRectStyle">CellFocus</property>
+  <property name="HorzScrollStep">0</property>
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="OptionsLayout" isnull="true" iskey="true">
+    <property name="Columns" isnull="true" iskey="true">
+      <property name="AddNewColumns">false</property>
+    </property>
+  </property>
+  <property name="ViewCaptionHeight">-1</property>
+  <property name="Columns" iskey="true" value="2">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Name">gridColumn1</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="AllowGroup">False</property>
+      </property>
+      <property name="Caption">Validator</property>
+      <property name="ColumnEditName" />
+      <property name="VisibleIndex">0</property>
+      <property name="Visible">true</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Name">gridColumn2</property>
+      <property name="OptionsEditForm" isnull="true" iskey="true">
+        <property name="StartNewRow">true</property>
+      </property>
+      <property name="Caption">Regular expression</property>
+      <property name="ColumnEditName" />
+      <property name="VisibleIndex">1</property>
+      <property name="Visible">true</property>
+    </property>
+  </property>
+  <property name="ViewCaption" />
+  <property name="BorderStyle">Default</property>
+  <property name="SynchronizeClones">true</property>
+  <property name="DetailTabHeaderLocation">Top</property>
+  <property name="Name">gridView1</property>
+  <property name="DetailHeight">350</property>
+  <property name="Tag" isnull="true" />
+  <property name="GroupSummary" iskey="true" value="1">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="ShowInGroupColumnFooterName" />
+      <property name="Tag" isnull="true" />
+      <property name="FieldName" />
+      <property name="SummaryType">None</property>
+      <property name="DisplayFormat" />
+    </property>
+  </property>
+  <property name="ActiveFilterString" />
+  <property name="FormatRules" iskey="true" value="0" />
+  <property name="FormatConditions" iskey="true" value="0" />
+  <property name="GroupSummarySortInfoState" />
+  <property name="FindFilterText" />
+  <property name="FindPanelVisible">false</property>
+</XtraSerializer>
