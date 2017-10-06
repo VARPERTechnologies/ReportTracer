@@ -16,7 +16,6 @@ namespace ReportTracer
         /// </summary>
         public JSONReport()
         {
-            ORIdentifier = "";
             Timestamp = new DateTime();
             Devices = new List<Host>();
         }
@@ -27,18 +26,12 @@ namespace ReportTracer
         /// <param name="or"></param>
         /// <param name="ts"></param>
         /// <param name="devs"></param>
-        public JSONReport(string or, DateTime ts, List<Host> devs)
+        public JSONReport(DateTime ts, List<Host> devs)
         {
-            ORIdentifier = or;
             Timestamp = ts;
             Devices = devs;
         }
-
-        /// <summary>
-        /// The OR identifier
-        /// </summary>
-        public string ORIdentifier { get; set; }
-
+        
         /// <summary>
         /// A timestamp when this report has been sent.
         /// </summary>
@@ -48,7 +41,6 @@ namespace ReportTracer
         /// The list of devices that involves this report. 
         /// </summary>
         public List<Host> Devices { get; set; }
-
     }
 
     /// <summary>
@@ -83,24 +75,5 @@ namespace ReportTracer
         /// </summary>
         public double Time { get; set; }
     }
-
-    //class Hop : INetworkDevice
-    //{
-    //    /// <summary>
-    //    /// An device alias stablished for this hop
-    //    /// </summary>
-    //    public string Alias { get; set; }
-
-    //    /// <summary>
-    //    /// <see cref="INetworkDevice"/>
-    //    /// </summary>
-    //    public string HostName { get; set; }
-
-    //    /// <summary>
-    //    /// <see cref="INetworkDevice"/>
-    //    /// </summary>
-    //    public string IP { get; set; }
-
-    //    public float Time { get; set; }
-    //}
+    
 }

@@ -11,15 +11,6 @@
     <Setting Name="SmtpSecurity" Type="System.String" Scope="User">
       <Value Profile="(Default)">SSL/TLS</Value>
     </Setting>
-    <Setting Name="SmtpUser" Type="System.String" Scope="User">
-      <Value Profile="(Default)">developmentavant@gmail.com</Value>
-    </Setting>
-    <Setting Name="SmtpPass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Informatica533.,</Value>
-    </Setting>
-    <Setting Name="ReceiverEmail" Type="System.String" Scope="User">
-      <Value Profile="(Default)">developmentavant@gmail.com</Value>
-    </Setting>
     <Setting Name="Subject" Type="System.String" Scope="User">
       <Value Profile="(Default)">[ReportTracer]JSONReport</Value>
     </Setting>
@@ -34,6 +25,15 @@
     </Setting>
     <Setting Name="SmtpTimeout" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="SmtpUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxxxxxxx@xxxxxxx.com</Value>
+    </Setting>
+    <Setting Name="SmtpPass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxxxxxxxxxxxxx</Value>
+    </Setting>
+    <Setting Name="ReceiverEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxxxxxxxx@xxxxxxxx.com</Value>
     </Setting>
   </Settings>
 </SettingsFile>

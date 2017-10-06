@@ -12,7 +12,7 @@ namespace ReportTracer.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -56,42 +56,6 @@ namespace ReportTracer.Properties {
             }
             set {
                 this["SmtpSecurity"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("developmentavant@gmail.com")]
-        public string SmtpUser {
-            get {
-                return ((string)(this["SmtpUser"]));
-            }
-            set {
-                this["SmtpUser"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Informatica533.,")]
-        public string SmtpPass {
-            get {
-                return ((string)(this["SmtpPass"]));
-            }
-            set {
-                this["SmtpPass"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("developmentavant@gmail.com")]
-        public string ReceiverEmail {
-            get {
-                return ((string)(this["ReceiverEmail"]));
-            }
-            set {
-                this["ReceiverEmail"] = value;
             }
         }
         
@@ -152,6 +116,42 @@ namespace ReportTracer.Properties {
             }
             set {
                 this["SmtpTimeout"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("xxxxxxxx@xxxxxxx.com")]
+        public string SmtpUser {
+            get {
+                return ((string)(this["SmtpUser"]));
+            }
+            set {
+                this["SmtpUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("xxxxxxxxxxxxxx")]
+        public string SmtpPass {
+            get {
+                return ((string)(this["SmtpPass"]));
+            }
+            set {
+                this["SmtpPass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("xxxxxxxxx@xxxxxxxx.com")]
+        public string ReceiverEmail {
+            get {
+                return ((string)(this["ReceiverEmail"]));
+            }
+            set {
+                this["ReceiverEmail"] = value;
             }
         }
     }

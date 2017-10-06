@@ -53,6 +53,9 @@
   <PropertyGroup>
     <StartupObject>TracertDemo.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>RT X 64PX.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -117,6 +120,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="DynamicTextFinder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -136,7 +145,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetworkDevice.cs" />
     <Compile Include="OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,21 +158,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Generic.resx</DependentUpon>
     </Compile>
-    <Compile Include="RouteDataSource.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RouteReport.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RouteReport.Designer.cs">
-      <DependentUpon>RouteReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="SendingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SendingForm.Designer.cs">
       <DependentUpon>SendingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DynamicTextFinder.resx">
       <DependentUpon>DynamicTextFinder.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,7 +180,6 @@
     <EmbeddedResource Include="OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -193,14 +194,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Generic.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RouteReport.resx">
-      <DependentUpon>RouteReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SendingForm.resx">
       <DependentUpon>SendingForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Properties\DataSources\VRK.Net.Tracert.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -219,63 +216,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\icons\256\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\256\magnifying-glass-clipart-magnifying_glass_black.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\banner RTMesa de trabajo 1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\lupa RTMesa de trabajo 1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\lupa RTMesa de trabajo 2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Camara domo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Camara frontal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\DMP.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\DVR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Error.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Gateway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Host correct 18px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Host correct.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Host error 18 px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\Host error.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\RT Mesa de trabajo 1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons\23\RT Mesa de trabajo 2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
@@ -292,8 +232,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="img\icons\RT X 64 PX.png" />
+    <Content Include="RT X 64PX.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

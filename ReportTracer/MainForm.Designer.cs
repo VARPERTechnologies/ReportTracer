@@ -61,6 +61,7 @@ namespace ReportTracer
             this.btnOptions = new DevExpress.XtraBars.BarButtonItem();
             this.mOptions = new DevExpress.XtraBars.BarSubItem();
             this.tabFormControl1 = new DevExpress.XtraBars.TabFormControl();
+            this.btnAbout = new DevExpress.XtraBars.BarButtonItem();
             this.tabMain = new DevExpress.XtraBars.TabFormPage();
             this.tabFormContentContainer1 = new DevExpress.XtraBars.TabFormContentContainer();
             this.tableLayoutPanel1.SuspendLayout();
@@ -126,7 +127,7 @@ namespace ReportTracer
             this.close.TabIndex = 5;
             this.close.Text = "&Cerrar";
             this.close.UseVisualStyleBackColor = true;
-            this.close.Click += new System.EventHandler(this.close_Click);
+            this.close.Click += new System.EventHandler(this.Close_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -139,14 +140,14 @@ namespace ReportTracer
             this.tableLayoutPanel1.Controls.Add(this.tlDevicesToRoute, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 32);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 27);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(588, 662);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(588, 667);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // tableLayoutPanel2
@@ -164,7 +165,7 @@ namespace ReportTracer
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(327, 35);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(322, 31);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // btnAddHost
@@ -174,7 +175,7 @@ namespace ReportTracer
             this.btnAddHost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddHost.Location = new System.Drawing.Point(265, 3);
             this.btnAddHost.Name = "btnAddHost";
-            this.btnAddHost.Size = new System.Drawing.Size(30, 29);
+            this.btnAddHost.Size = new System.Drawing.Size(27, 25);
             this.btnAddHost.TabIndex = 3;
             this.btnAddHost.Text = "+";
             this.btnAddHost.UseVisualStyleBackColor = true;
@@ -184,9 +185,9 @@ namespace ReportTracer
             // 
             this.btnDelHost.AutoSize = true;
             this.btnDelHost.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDelHost.Location = new System.Drawing.Point(301, 3);
+            this.btnDelHost.Location = new System.Drawing.Point(298, 3);
             this.btnDelHost.Name = "btnDelHost";
-            this.btnDelHost.Size = new System.Drawing.Size(23, 27);
+            this.btnDelHost.Size = new System.Drawing.Size(21, 23);
             this.btnDelHost.TabIndex = 4;
             this.btnDelHost.Text = "-";
             this.btnDelHost.UseVisualStyleBackColor = true;
@@ -213,13 +214,13 @@ namespace ReportTracer
             this.treeListColumn2});
             this.tlDevicesToRoute.Cursor = System.Windows.Forms.Cursors.Default;
             this.tlDevicesToRoute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlDevicesToRoute.Location = new System.Drawing.Point(3, 164);
+            this.tlDevicesToRoute.Location = new System.Drawing.Point(3, 160);
             this.tlDevicesToRoute.Name = "tlDevicesToRoute";
             this.tlDevicesToRoute.OptionsBehavior.ImmediateEditor = false;
             this.tlDevicesToRoute.OptionsCustomization.AllowColumnMoving = false;
             this.tlDevicesToRoute.OptionsSelection.MultiSelect = true;
             this.tlDevicesToRoute.OptionsView.FocusRectStyle = DevExpress.XtraTreeList.DrawFocusRectStyle.RowFullFocus;
-            this.tlDevicesToRoute.Size = new System.Drawing.Size(582, 445);
+            this.tlDevicesToRoute.Size = new System.Drawing.Size(582, 454);
             this.tlDevicesToRoute.TabIndex = 14;
             this.tlDevicesToRoute.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnKeyUp);
             // 
@@ -278,7 +279,7 @@ namespace ReportTracer
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.40426F));
             this.tableLayoutPanel3.Controls.Add(this.startTrace, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 615);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 620);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -295,7 +296,7 @@ namespace ReportTracer
             this.startTrace.Size = new System.Drawing.Size(131, 38);
             this.startTrace.TabIndex = 0;
             this.startTrace.Text = "Test";
-            this.startTrace.Click += new System.EventHandler(this.startTrace_Click);
+            this.startTrace.Click += new System.EventHandler(this.StartTrace_Click);
             // 
             // pmCommands
             // 
@@ -309,7 +310,7 @@ namespace ReportTracer
             this.btnReport.Caption = "Send report";
             this.btnReport.Id = 0;
             this.btnReport.Name = "btnReport";
-            this.btnReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReport_ItemClick);
+            this.btnReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnReport_ItemClick);
             // 
             // bmCommands
             // 
@@ -383,17 +384,28 @@ namespace ReportTracer
             // 
             this.tabFormControl1.AllowMoveTabs = false;
             this.tabFormControl1.AllowMoveTabsToOuterForm = false;
+            this.tabFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btnAbout});
             this.tabFormControl1.Location = new System.Drawing.Point(0, 0);
             this.tabFormControl1.Name = "tabFormControl1";
             this.tabFormControl1.Pages.Add(this.tabMain);
             this.tabFormControl1.SelectedPage = this.tabMain;
             this.tabFormControl1.ShowAddPageButton = false;
             this.tabFormControl1.ShowTabsInTitleBar = DevExpress.XtraBars.ShowTabsInTitleBar.True;
-            this.tabFormControl1.Size = new System.Drawing.Size(588, 32);
+            this.tabFormControl1.Size = new System.Drawing.Size(588, 27);
             this.tabFormControl1.TabForm = this;
             this.tabFormControl1.TabIndex = 8;
             this.tabFormControl1.TabRightItemLinks.Add(this.mMain);
+            this.tabFormControl1.TabRightItemLinks.Add(this.btnAbout);
             this.tabFormControl1.TabStop = false;
+            this.tabFormControl1.Click += new System.EventHandler(this.tabFormControl1_Click);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Caption = "About...";
+            this.btnAbout.Id = 4;
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbout_ItemClick);
             // 
             // tabMain
             // 
@@ -406,9 +418,9 @@ namespace ReportTracer
             // tabFormContentContainer1
             // 
             this.tabFormContentContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabFormContentContainer1.Location = new System.Drawing.Point(0, 32);
+            this.tabFormContentContainer1.Location = new System.Drawing.Point(0, 27);
             this.tabFormContentContainer1.Name = "tabFormContentContainer1";
-            this.tabFormContentContainer1.Size = new System.Drawing.Size(588, 662);
+            this.tabFormContentContainer1.Size = new System.Drawing.Size(588, 667);
             this.tabFormContentContainer1.TabIndex = 9;
             // 
             // MainForm
@@ -478,6 +490,7 @@ namespace ReportTracer
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraBars.BarButtonItem btnAbout;
     }
 }
 

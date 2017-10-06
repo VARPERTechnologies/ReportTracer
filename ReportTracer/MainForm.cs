@@ -20,9 +20,6 @@ using System.IO;
 using System.Threading;
 using VRK.Net;
 
-
-
-
 namespace ReportTracer
 {
     /// <summary>
@@ -259,19 +256,18 @@ namespace ReportTracer
             {
                 if (str.Length != 0)
                 {
+
                     string
                         //strDNSRegex = "\\b((?=[a-z0-9-]{1,63}\\.)[a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,63}\\b", //Domain name RegEx
                         strDNSRegex = "\\b^((?=[a-z0-9-]{1,63}\\.)[a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,63}$\\b", //Domain name RegEx
-                        strATMRegex = "\\b^[0-9]{4}$\\b", //ATM number RegEx
-                        strBranchRegex = "\\b^[0-9]{3}$\\b", //Branch number RegEx
+
+                        //This regular expressions only validate IPv4
                         //strIPRegex = "\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0 - 5] | 2[0 - 4][0 - 9] |[01]?[0 - 9][0 - 9] ?)\\b";
                         //strIPRegex = "\\b(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\b";
                         strIPRegex = "\\b^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])$\\b";
 
                     Regex
                         DNSReg = new Regex(strDNSRegex, RegexOptions.IgnoreCase),
-                        ATMReg = new Regex(strATMRegex, RegexOptions.IgnoreCase),
-                        BranchReg = new Regex(strBranchRegex, RegexOptions.IgnoreCase),
                         IPReg = new Regex(strIPRegex, RegexOptions.IgnoreCase);
 
                     txtDestination.LabelObj.ForeColor = Color.Black;
@@ -280,20 +276,10 @@ namespace ReportTracer
                         destType = DestinationType.DNS;
                         txtDestination.LabelObj.Text = "Domain name";
                     }
-                    else if (ATMReg.IsMatch(str)) //Check for ATM number
-                    {
-                        destType = DestinationType.ATM;
-                        txtDestination.LabelObj.Text = "ATM";
-                    }
                     else if (IPReg.IsMatch(str)) //Check for IP
                     {
                         destType = DestinationType.IP;
                         txtDestination.LabelObj.Text = "IP";
-                    }
-                    else if (BranchReg.IsMatch(str)) //Check for ATM number
-                    {
-                        destType = DestinationType.BRANCH;
-                        txtDestination.LabelObj.Text = "Branch";
                     }
                     else
                     {
@@ -312,52 +298,13 @@ namespace ReportTracer
                 LogError(e);
             }
         }
-
-        /// <summary>
-        /// Thrown when user has started a search for a ATM number. 
-        /// </summary>
-        /// <param name="srctextbox">The source control.</param>
-        /// <param name="str">The current inserted text, this can be the number of the ATM or could be a
-        /// wrong parameter.
-        /// NOTE: This functions just validate the correct format of the number</param>
-        //private void SearchStarted(TextBox srctextbox, string str)
-        //{
-        //    try
-        //    {
-        //        switch(destType)
-        //        {
-        //            case DestinationType.ATM:
-
-        //                GenerateATMDeviceList(Convert.ToInt32(str));
-
-        //                break;
-        //            case DestinationType.BRANCH:
-
-        //                GenerateBranchDeviceList(Convert.ToInt32(str));
-
-        //                break;
-        //            case DestinationType.IP:
-
-        //                break;
-        //            case DestinationType.DNS:
-        //                break;
-        //            case DestinationType.INVALID:
-        //            default:
-        //                throw new FormatException();
-        //        }
-        //    }
-        //    catch (FormatException /*e*/) 
-        //    {
-        //        MessageBox.Show("Must insert a valid host destination", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-
+        
         /// <summary>
         /// Just close the application.
         /// </summary>
         /// <param name="sender">The sender object.</param>
         /// <param name="e">The event arguments.</param>
-        private void close_Click(object sender, EventArgs e)
+        private void Close_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -367,7 +314,7 @@ namespace ReportTracer
         /// </summary>
         /// <param name="sender">The sender object.</param>
         /// <param name="e">The event arguments</param>
-        private void startTrace_Click(object sender, EventArgs e)
+        private void StartTrace_Click(object sender, EventArgs e)
         {
             //Reload settings in case some change
             Settings.Default.Reload();
@@ -507,20 +454,10 @@ namespace ReportTracer
             {
                 string
                     strHost = "Host" + Convert.ToString(iAddedHosts),
-                    strDNS = txtDestination.Text;
+                    strDNS = txtDestination.Text.ToLower();
 
                 switch (destType)
                 {
-                    case DestinationType.ATM:
-
-                        GenerateATMDeviceList(Convert.ToInt32(txtDestination.Text));
-
-                        break;
-                    case DestinationType.BRANCH:
-
-                        GenerateBranchDeviceList(Convert.ToInt32(txtDestination.Text));
-
-                        break;
                     case DestinationType.DNS:
                         {
                             object[] hostItem = new object[FIELDS]
@@ -671,7 +608,7 @@ namespace ReportTracer
                 LogError(ex);
             }
         }
-        static int requestCounter = 0;
+        //static int requestCounter = 0;
 
         /// <summary>
         /// This slot catch when a node has found. This can be iterpreted as a HOP.
@@ -685,7 +622,7 @@ namespace ReportTracer
             int devices = tlDevicesToRoute.Nodes.Count;
             //int hostCounter = 0;
 
-            DevExpress.XtraTreeList.Nodes.TreeListNode addedNode;
+            //DevExpress.XtraTreeList.Nodes.TreeListNode addedNode;
 
             for (int i = 0; i < devices; i++)
             {
@@ -1030,15 +967,18 @@ namespace ReportTracer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BtnReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            JSONReport report = new JSONReport();
-
-            report.Devices = new List<Host>();
-
-            foreach(DevExpress.XtraTreeList.Nodes.TreeListNode n in tlDevicesToRoute.Nodes)
+            JSONReport report = new JSONReport()
             {
+                Devices = new List<Host>()
+            };
+
+            foreach (DevExpress.XtraTreeList.Nodes.TreeListNode n in tlDevicesToRoute.Nodes)
+            {
+#pragma warning disable IDE0017 // Simplify object initialization
                 Host h = new Host();
+#pragma warning restore IDE0017 // Simplify object initialization
 
                 //string 
                 //    strAlias = n.GetValue(0) != null ? n.GetValue(0).ToString() : "",
@@ -1087,21 +1027,9 @@ namespace ReportTracer
             }
 
             report.Timestamp = DateTime.Now;
-            
-            //string strOR = Microsoft.VisualBasic.Interaction.InputBox("(*)Remote Order Number", "Remote Order", "");
-            string strOR = GenerateReportForm.GetTextValue();
-
-            if(strOR == "")
-            {
-                MessageBox.Show("A report can not sent without an Remote Order Number");
-            }
-            if (strOR != "" && strOR != null)
-            {
-                report.ORIdentifier = strOR;
-
-                string serialized = Newtonsoft.Json.JsonConvert.SerializeObject(report);
-                StartSend(serialized);
-            }
+           
+            string serialized = Newtonsoft.Json.JsonConvert.SerializeObject(report);
+            StartSend(serialized);
         }
 
         /// <summary>
@@ -1293,6 +1221,18 @@ namespace ReportTracer
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             StopTrace();
+        }
+
+        private void tabFormControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAbout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AboutBox ab = new AboutBox();
+
+            ab.ShowDialog();
         }
     }   
 }
